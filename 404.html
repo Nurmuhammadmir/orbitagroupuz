@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Страница не найдена | Orbita Group</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta name="theme-color" content="#0A5A3D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="./index.html" class="logo">ORBITA<em>&nbsp;GROUP</em></a>
+    <nav class="main"><a href="./services.html">Услуги</a><a href="./about.html">О компании</a><a href="./pricing.html">Тарифы</a><a href="./blog/index.html">Блог</a><a href="./contact.html">Контакты</a></nav>
+    <div class="hdr-right">
+      <div class="lang-switch"><a href="#" class="active">RU</a><a href="uz/404.html">UZ</a></div>
+      <a class="phone" href="tel:+998884877530">+998 88 487 75 30</a>
+    </div>
+  </div>
+</header>
+<section class="page-hero" style="text-align:center;padding:100px 0;">
+  <div class="wrap">
+    <div class="kicker" style="justify-content:center;">Ошибка 404</div>
+    <h1 class="page-title" style="font-size:44px;">Такой страницы не существует</h1>
+    <p class="page-lead" style="max-width:520px;margin:0 auto 34px;">Возможно, ссылка устарела или в адресе опечатка. Но бухгалтерия всё ещё на месте — начните с главной или посмотрите список услуг.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a class="btn-primary" href="./index.html">На главную</a>
+      <a class="btn-secondary" href="./services.html">Смотреть услуги</a>
+    </div>
+  </div>
+</section>
+<footer class="site">
+  <div class="wrap">
+    <div><a href="./index.html" class="logo">ORBITA<em>&nbsp;GROUP</em></a><p class="about">Бухгалтерский аутсорсинг, налоговый консалтинг и регистрация бизнеса в Узбекистане.</p></div>
+    <div><h4>Навигация</h4><div class="flinks"><a href="./services.html">Услуги</a><a href="./about.html">О компании</a><a href="./pricing.html">Тарифы</a><a href="./blog/index.html">Блог</a></div></div>
+    <div><h4>Компания</h4><div class="flinks"><a href="./contact.html">Контакты</a><a href="./faq.html">Вопросы и ответы</a></div></div>
+    <div><h4>Контакты</h4><div class="flinks"><a href="tel:+998884877530">+998 88 487 75 30</a><a href="https://t.me/orbitagroupuz">Telegram: @orbitagroupuz</a><span>ул. Шахрисабз, 25, 100030, Ташкент, Узбекистан</span></div></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Orbita Group. Все права защищены.</span></div>
+</footer>
+<script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var lenis = reduceMotion ? null : new Lenis({
+    duration: 1.2,
+    easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+    anchors: true
+  });
+
+  if (lenis && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  } else if (lenis) {
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  }
+
+  // Появление блоков при скролле — через IntersectionObserver, а не ScrollTrigger,
+  // чтобы анимация не зависела от синхронизации с Lenis и никогда не оставляла
+  // контент (в т.ч. ссылки) невидимым, если что-то в этой синхронизации пойдёт не так.
+  if (!reduceMotion && window.gsap) {
+    document.documentElement.classList.add('js-gsap');
+    var items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && items.length) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            gsap.fromTo(entry.target, { opacity: 0, y: 28, scale: 0.97 }, {
+              opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'power3.out'
+            });
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.01 });
+      items.forEach(function (el) { io.observe(el); });
+      // Подстраховка: если через 5с после загрузки элемент так и не попал в кадр
+      // наблюдателя (редкий краевой случай), всё равно показываем контент.
+      setTimeout(function () {
+        items.forEach(function (el) {
+          if (getComputedStyle(el).opacity === '0') { gsap.set(el, { opacity: 1, y: 0, scale: 1 }); }
+        });
+      }, 5000);
+    } else {
+      items.forEach(function (el) { gsap.set(el, { opacity: 1 }); });
+    }
+  }
+})();
+</script>
+</body>
+</html>
