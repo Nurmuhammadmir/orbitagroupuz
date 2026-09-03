@@ -41,8 +41,11 @@
 <style>
   .lp-header{border-bottom:1px solid var(--line);background:rgba(247,250,248,.9);position:sticky;top:0;z-index:50;}
   .lp-header .wrap{height:76px;display:flex;align-items:center;justify-content:space-between;}
-  .lp-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);padding:8px 16px;font-size:13px;color:var(--slate);margin-bottom:22px;}
-  .lp-badge b{color:var(--ink);}
+  .lp-badge{display:inline-flex;align-items:center;gap:0;background:var(--brass-grad);color:#fff;border:none;border-radius:999px;padding:10px 22px;font-size:12.5px;font-weight:600;letter-spacing:.01em;margin-bottom:24px;box-shadow:0 10px 24px -6px rgba(11,107,74,0.4);}
+  .lp-badge b{color:#fff;font-weight:700;margin-left:4px;}
+  .hero-visual{position:relative;}
+  .hero-visual::before{content:"";position:absolute;inset:-15%;background:radial-gradient(circle at 28% 22%,rgba(43,175,125,0.4),transparent 62%),radial-gradient(circle at 78% 82%,rgba(10,90,61,0.3),transparent 58%);filter:blur(46px);z-index:0;}
+  .trial-card{position:relative;z-index:1;border:none;background:rgba(255,255,255,0.55);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:0 34px 64px -22px rgba(11,107,74,0.28),0 10px 26px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.7);}
   .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 36px;}
   .benefit-item{background:none;border:none;padding:0;}
   .benefit-icon{width:80px;height:80px;margin-bottom:22px;filter:drop-shadow(0 12px 18px rgba(11,107,74,0.3));}
@@ -52,18 +55,7 @@
   @media(max-width:820px){.benefit-grid{grid-template-columns:1fr 1fr;}}
   @media(max-width:560px){.benefit-grid{grid-template-columns:1fr;}}
 </style>
-<!-- Yandex.Metrika — замените XXXXXXXX на ваш реальный номер счётчика с metrika.yandex.ru -->
-<script type="text/javascript">
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   // ym(XXXXXXXX, "init", {...}); // ЗАПОЛНИТЕ реальный номер счётчика с metrika.yandex.ru перед включением
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika -->
+<!-- Yandex.Metrika отключена: пока подключён только счётчик-заглушка (XXXXXXXX). Когда получите реальный ID на metrika.yandex.ru, вставьте официальный код сюда — до этого скрипт не грузим, чтобы не тратить лишний запрос на каждой странице. -->
 <!-- Подтверждение прав в Яндекс.Вебмастере — вставьте свой код после регистрации на webmaster.yandex.ru -->
 <meta name="yandex-verification" content="ЗАМЕНИТЬ_НА_СВОЙ_КОД" />
 <!-- Подтверждение прав в Google Search Console — вставьте свой код после регистрации на search.google.com/search-console -->
@@ -83,7 +75,7 @@
 <section class="hero-v2"><div class="wrap">
   <div class="hero-grid">
     <div class="hero-copy">
-      <div class="lp-badge">🟢 Birinchi konsultatsiya — <b>bepul</b></div>
+      <div class="lp-badge">Birinchi konsultatsiya — <b>bepul</b></div>
       <h1 class="serif">Biznesingiz uchun to'liq buxgalteriya — <span class="underline-word">shtatdagi buxgaltersiz<svg viewBox="0 0 200 20" fill="none"><path d="M2 14 Q 50 2, 100 10 T 198 8" stroke="#0B6B4A" stroke-width="4" stroke-linecap="round"/></svg></span></h1>
       <p style="font-size:17px;line-height:1.65;color:var(--slate);max-width:460px;margin-bottom:28px;">Hisob, soliqlar, ish haqi, hisobotlar va biznesni ro'yxatdan o'tkazish — kalit topshirish tarzida, masofadan, butun O'zbekiston bo'ylab. Ariza qoldiring — ish vaqtida 15 daqiqada qo'ng'iroq qilamiz.</p>
       <div class="btn-row"><a class="btn-primary" href="tel:+998884877530">Hozir qo'ng'iroq qiling</a><a class="btn-secondary" href="https://t.me/orbitagroupuz?text=Assalomu%20alaykum!%20Buxgalteriya%20bo'yicha%20konsultatsiya%20olmoqchiman.">Telegramda yozish</a></div>
@@ -104,10 +96,10 @@
 </div></section>
 
 <section class="ledger"><div class="wrap">
-  <div class="ledger-item"><div class="ledger-num"><span>50+</span></div><div class="ledger-label">xizmatdagi kompaniyalar</div></div>
-  <div class="ledger-item"><div class="ledger-num"><span>18</span></div><div class="ledger-label">jamoadagi mutaxassis</div></div>
-  <div class="ledger-item"><div class="ledger-num"><span>65%</span></div><div class="ledger-label">mijozlar — tavsiya orqali</div></div>
-  <div class="ledger-item"><div class="ledger-num"><span>9:00–18:00</span></div><div class="ledger-label">butun O'zbekiston bo'ylab ishlaymiz</div></div>
+  <div class="ledger-item"><div class="ledger-num"><span>50+</span></div><div class="ledger-label">Xizmatdagi kompaniyalar</div></div>
+  <div class="ledger-item"><div class="ledger-num"><span>18</span></div><div class="ledger-label">Jamoadagi mutaxassislar</div></div>
+  <div class="ledger-item"><div class="ledger-num"><span>65%</span></div><div class="ledger-label">Mijozlar — tavsiya orqali</div></div>
+  <div class="ledger-item"><div class="ledger-num"><span>9:00–18:00</span></div><div class="ledger-label">Butun O'zbekiston bo'ylab masofadan ishlaymiz</div></div>
 </div></section>
 
 <section class="section"><div class="wrap">
