@@ -31,12 +31,20 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CTJNXNTMGG');
-  // gtag('config', 'AW-XXXXXXXXX');
+  gtag('config', 'AW-18395049728');
   document.addEventListener('click', function(e){
     var call = e.target.closest('a[href^="tel:"]');
     var tg = e.target.closest('a[href*="t.me/"]');
-    if (call) gtag('event', 'contact_click', {method: 'phone'});
-    if (tg) gtag('event', 'contact_click', {method: 'telegram'});
+    if (call) {
+      gtag('event', 'contact_click', {method: 'phone'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = call.href; }});
+    }
+    if (tg) {
+      gtag('event', 'contact_click', {method: 'telegram'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = tg.href; }});
+    }
   });
 </script>
 <!-- Yandex.Metrika отключена: пока подключён только счётчик-заглушка (XXXXXXXX). Когда получите реальный ID на metrika.yandex.ru, вставьте официальный код сюда — до этого скрипт не грузим, чтобы не тратить лишний запрос на каждой странице. -->

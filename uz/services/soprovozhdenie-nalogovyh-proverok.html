@@ -31,13 +31,21 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CTJNXNTMGG');
-  // gtag('config', 'AW-XXXXXXXXX'); // Google Ads konversiya ID
+  gtag('config', 'AW-18395049728');
 
   document.addEventListener('click', function(e){
     var call = e.target.closest('a[href^="tel:"]');
     var tg = e.target.closest('a[href*="t.me/"]');
-    if (call) gtag('event', 'contact_click', {method: 'phone'});
-    if (tg) gtag('event', 'contact_click', {method: 'telegram'});
+    if (call) {
+      gtag('event', 'contact_click', {method: 'phone'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = call.href; }});
+    }
+    if (tg) {
+      gtag('event', 'contact_click', {method: 'telegram'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = tg.href; }});
+    }
   });
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Tekshiruv boshlangandan keyin murojaat qilish mumkinmi?", "acceptedAnswer": {"@type": "Answer", "text": "Ha, istalgan bosqichda qo'shilamiz — qanchalik erta bo'lsa, natijaga ta'sir qilish imkoniyati shunchalik ko'p."}}, {"@type": "Question", "name": "Soliq idorasi bilan uchrashuvlarda shaxsan qatnashasizmi?", "acceptedAnswer": {"@type": "Answer", "text": "Ha, ishonchnoma asosida inspeksiya bilan muloqotning barcha bosqichlarida kompaniya manfaatlarini vakillik qilamiz."}}, {"@type": "Question", "name": "Tekshiruv natijasida qaror allaqachon chiqarilgan bo'lsa-chi?", "acceptedAnswer": {"@type": "Answer", "text": "E'tiroz tayyorlashga yoki qarorni yuqori organga shikoyat qilishga yordam beramiz."}}]}</script>

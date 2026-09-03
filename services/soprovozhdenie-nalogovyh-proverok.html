@@ -31,14 +31,21 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CTJNXNTMGG');
-  // Как только создадите аккаунт Google Ads, раскомментируйте строку ниже и вставьте свой AW-ID:
-  // gtag('config', 'AW-XXXXXXXXX');
+  gtag('config', 'AW-18395049728');
 
   document.addEventListener('click', function(e){
     var call = e.target.closest('a[href^="tel:"]');
     var tg = e.target.closest('a[href*="t.me/"]');
-    if (call) gtag('event', 'contact_click', {method: 'phone'});
-    if (tg) gtag('event', 'contact_click', {method: 'telegram'});
+    if (call) {
+      gtag('event', 'contact_click', {method: 'phone'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = call.href; }});
+    }
+    if (tg) {
+      gtag('event', 'contact_click', {method: 'telegram'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = tg.href; }});
+    }
   });
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Можно ли обратиться уже после начала проверки?", "acceptedAnswer": {"@type": "Answer", "text": "Да, подключаемся на любом этапе — чем раньше, тем больше возможностей повлиять на результат."}}, {"@type": "Question", "name": "Вы участвуете во встречах с налоговой лично?", "acceptedAnswer": {"@type": "Answer", "text": "Да, представляем интересы компании по доверенности на всех этапах общения с инспекцией."}}, {"@type": "Question", "name": "Что если по итогам проверки уже вынесено решение?", "acceptedAnswer": {"@type": "Answer", "text": "Поможем подготовить и подать возражения или обжаловать решение в вышестоящий орган."}}]}</script>

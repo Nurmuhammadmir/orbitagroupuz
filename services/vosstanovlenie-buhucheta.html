@@ -31,14 +31,21 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CTJNXNTMGG');
-  // Как только создадите аккаунт Google Ads, раскомментируйте строку ниже и вставьте свой AW-ID:
-  // gtag('config', 'AW-XXXXXXXXX');
+  gtag('config', 'AW-18395049728');
 
   document.addEventListener('click', function(e){
     var call = e.target.closest('a[href^="tel:"]');
     var tg = e.target.closest('a[href*="t.me/"]');
-    if (call) gtag('event', 'contact_click', {method: 'phone'});
-    if (tg) gtag('event', 'contact_click', {method: 'telegram'});
+    if (call) {
+      gtag('event', 'contact_click', {method: 'phone'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = call.href; }});
+    }
+    if (tg) {
+      gtag('event', 'contact_click', {method: 'telegram'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = tg.href; }});
+    }
   });
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "За какой период можно восстановить учёт?", "acceptedAnswer": {"@type": "Answer", "text": "Как правило — за последние 3–5 лет, в зависимости от сохранности первичных документов."}}, {"@type": "Question", "name": "Нужно ли останавливать текущую деятельность на время восстановления?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, восстановление ведётся параллельно с текущим учётом, не затрагивая операционную работу компании."}}, {"@type": "Question", "name": "Что делать, если часть документов утеряна?", "acceptedAnswer": {"@type": "Answer", "text": "Поможем восстановить их через контрагентов, банк и налоговые органы либо предложим альтернативные способы подтверждения операций."}}]}</script>

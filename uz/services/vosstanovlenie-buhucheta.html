@@ -31,13 +31,21 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CTJNXNTMGG');
-  // gtag('config', 'AW-XXXXXXXXX'); // Google Ads konversiya ID
+  gtag('config', 'AW-18395049728');
 
   document.addEventListener('click', function(e){
     var call = e.target.closest('a[href^="tel:"]');
     var tg = e.target.closest('a[href*="t.me/"]');
-    if (call) gtag('event', 'contact_click', {method: 'phone'});
-    if (tg) gtag('event', 'contact_click', {method: 'telegram'});
+    if (call) {
+      gtag('event', 'contact_click', {method: 'phone'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = call.href; }});
+    }
+    if (tg) {
+      gtag('event', 'contact_click', {method: 'telegram'});
+      e.preventDefault();
+      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = tg.href; }});
+    }
   });
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hisobni qaysi davr uchun tiklash mumkin?", "acceptedAnswer": {"@type": "Answer", "text": "Odatda — so'nggi 3–5 yil uchun, birlamchi hujjatlarning saqlanganligiga qarab."}}, {"@type": "Question", "name": "Tiklash vaqtida joriy faoliyatni to'xtatish kerakmi?", "acceptedAnswer": {"@type": "Answer", "text": "Yo'q, tiklash joriy hisob bilan parallel olib boriladi, kompaniyaning operatsion ishiga ta'sir qilmaydi."}}, {"@type": "Question", "name": "Agar hujjatlarning bir qismi yo'qolgan bo'lsa-chi?", "acceptedAnswer": {"@type": "Answer", "text": "Ularni kontragentlar, bank va soliq organlari orqali tiklashga yordam beramiz yoki operatsiyalarni tasdiqlashning muqobil usullarini taklif qilamiz."}}]}</script>
