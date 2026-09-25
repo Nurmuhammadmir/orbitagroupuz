@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Orbita Group</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0A5A3D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="/en/index.html" class="logo">ORBITA<em>&nbsp;GROUP</em></a>
+    <nav class="main"><a href="/en/services.html">Services</a><a href="/en/about.html">About us</a><a href="/en/pricing.html">Pricing</a><a href="/en/blog/index.html">Blog</a><a href="/en/contact.html">Contact</a></nav>
+    <div class="hdr-right">
+      <div class="lang-switch"><a href="/404.html" class="">RU</a><a href="/uz/404.html" class="">UZ</a><a href="#" class="active">EN</a></div>
+      <a class="phone" href="tel:+998879419138">+998 87 941 91 38</a>
+    </div>
+  </div>
+</header>
+<section class="page-hero" style="text-align:center;padding:100px 0;">
+  <div class="wrap">
+    <div class="kicker" style="justify-content:center;">Error 404</div>
+    <h1 class="page-title" style="font-size:44px;">This page does not exist</h1>
+    <p class="page-lead" style="max-width:520px;margin:0 auto 34px;">The link may be outdated or there may be a typo in the address. But your accounting is still here — start from the home page or browse the list of services.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a class="btn-primary" href="/en/index.html">Back to home</a>
+      <a class="btn-secondary" href="/en/services.html">View services</a>
+    </div>
+  </div>
+</section>
+<footer class="site">
+  <div class="wrap">
+    <div><a href="/en/index.html" class="logo">ORBITA<em>&nbsp;GROUP</em></a><p class="about">Accounting outsourcing, tax consulting and business registration in Uzbekistan.</p></div>
+    <div><h4>Navigation</h4><div class="flinks"><a href="/en/services.html">Services</a><a href="/en/about.html">About us</a><a href="/en/pricing.html">Pricing</a><a href="/en/blog/index.html">Blog</a></div></div>
+    <div><h4>Company</h4><div class="flinks"><a href="/en/contact.html">Contact</a><a href="/en/faq.html">FAQ</a></div></div>
+    <div><h4>Contact</h4><div class="flinks"><a href="tel:+998879419138">+998 87 941 91 38</a><a href="https://t.me/orbitagroupuz">Telegram: @orbitagroupuz</a><span>25 Shahrisabz Street, 100030 Tashkent, Uzbekistan</span></div></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Orbita Group. All rights reserved.</span></div>
+</footer>
+<script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var lenis = reduceMotion ? null : new Lenis({
+    duration: 1.8,
+    easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+    anchors: true
+  });
+
+  if (lenis && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  } else if (lenis) {
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  }
+
+  // Reveal blocks on scroll via IntersectionObserver rather than ScrollTrigger,
+  // so the animation does not depend on Lenis sync and never leaves
+  // content (including links) invisible if that sync goes wrong.
+  if (!reduceMotion && window.gsap) {
+    document.documentElement.classList.add('js-gsap');
+    var items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && items.length) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            gsap.fromTo(entry.target, { opacity: 0, y: 28, scale: 0.97 }, {
+              opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'power3.out'
+            });
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.01 });
+      items.forEach(function (el) { io.observe(el); });
+      // Safety net: if an element still has not entered the observer's view 5s after load
+      // (a rare edge case), show the content anyway.
+      setTimeout(function () {
+        items.forEach(function (el) {
+          if (getComputedStyle(el).opacity === '0') { gsap.set(el, { opacity: 1, y: 0, scale: 1 }); }
+        });
+      }, 5000);
+    } else {
+      items.forEach(function (el) { gsap.set(el, { opacity: 1 }); });
+    }
+  }
+})();
+</script>
+</body>
+</html>

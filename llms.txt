@@ -1,8 +1,8 @@
 # Orbita Group
 
-> Бухгалтерский аутсорсинг, налоговый консалтинг и регистрация бизнеса в Узбекистане. Полное бухгалтерское сопровождение для предпринимателей, малого, среднего и крупного бизнеса. Работаем на русском и узбекском языках, по всему Узбекистану.
+> Бухгалтерский аутсорсинг, налоговый консалтинг и регистрация бизнеса в Узбекистане. Полное бухгалтерское сопровождение для предпринимателей, малого, среднего и крупного бизнеса. Сайт доступен на русском, узбекском и английском языках; работаем по всему Узбекистану.
 
-Контакты: телефон +998 88 487 75 30, Telegram @orbitagroupuz, офис в Ташкенте.
+Контакты: телефон +998 87 941 91 38, Telegram @orbitagroupuz, офис в Ташкенте.
 
 ## Услуги
 - [Бухгалтерское сопровождение](https://orbitagroup.uz/services/buhgalterskoe-soprovozhdenie.html): полное ведение бухгалтерии на аутсорсе
@@ -27,6 +27,27 @@
 - [Контакты](https://orbitagroup.uz/contact.html)
 - [Вопросы и ответы](https://orbitagroup.uz/faq.html)
 - Узбекская версия сайта: https://orbitagroup.uz/uz/
+- English version of the site: https://orbitagroup.uz/en/
 
 ## Важно
 Orbita Group не занимается трудоустройством или подбором бухгалтеров — компания берёт бухгалтерские, налоговые и кадровые процессы клиента на аутсорс.
+
+## English (English version of the site)
+Orbita Group is an accounting outsourcing, tax consulting and business registration company in Tashkent, Uzbekistan. Phone: +998 87 941 91 38, Telegram: @orbitagroupuz, office: 25 Shahrisabz Street, Tashkent.
+
+- [Home](https://orbitagroup.uz/en/)
+- [Accounting outsourcing](https://orbitagroup.uz/en/services/accounting-outsourcing.html): full bookkeeping and tax accounting outsourced, no in-house accountant needed
+- [Tax consulting](https://orbitagroup.uz/en/services/tax-consulting.html): choosing between the simplified and general (VAT) regimes, lawful tax optimization
+- [Company registration](https://orbitagroup.uz/en/services/company-registration.html): turnkey LLC and sole proprietorship registration in Uzbekistan, including foreign founders
+- [Company liquidation](https://orbitagroup.uz/en/services/company-liquidation.html)
+- [HR and payroll](https://orbitagroup.uz/en/services/hr-and-payroll.html)
+- [Accounting restoration](https://orbitagroup.uz/en/services/accounting-restoration.html)
+- [Tax audit support](https://orbitagroup.uz/en/services/tax-audit-support.html)
+- [Accounting for IT companies](https://orbitagroup.uz/en/services/accounting-for-it-companies.html): including IT Park resident benefits
+- [Accounting for construction companies](https://orbitagroup.uz/en/services/accounting-for-construction.html)
+- [Import and export accounting](https://orbitagroup.uz/en/services/import-export-accounting.html)
+- [Pricing](https://orbitagroup.uz/en/pricing.html): New Business from 1,500,000 UZS/month, Small Business from 3,000,000 UZS/month, Medium and Large Business from 6,000,000 UZS/month (individual quote)
+- [Blog](https://orbitagroup.uz/en/blog/index.html): practical guides on accounting, taxes and business registration in Uzbekistan
+- [About us](https://orbitagroup.uz/en/about.html), [Contact](https://orbitagroup.uz/en/contact.html), [FAQ](https://orbitagroup.uz/en/faq.html)
+
+Note: Orbita Group does not recruit or place accountants — it takes over a client's accounting, tax and HR processes on an outsourced basis.
