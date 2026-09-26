@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://orbitagroup.uz/og-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v=20260926">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -39,12 +39,12 @@
     if (call) {
       gtag('event', 'contact_click', {method: 'phone'});
       e.preventDefault();
-      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = call.href; }});
+      var go = function(){ if (go.done) return; go.done = 1; window.location = call.href; }; setTimeout(go, 800); gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': go});
     }
     if (tg) {
       gtag('event', 'contact_click', {method: 'telegram'});
       e.preventDefault();
-      gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': function(){ window.location = tg.href; }});
+      var go = function(){ if (go.done) return; go.done = 1; window.location = tg.href; }; setTimeout(go, 800); gtag('event', 'conversion', {'send_to': 'AW-18395049728/wOLXCJLVu-0cEIDeuMNE', 'event_callback': go});
     }
   });
 </script>
@@ -58,7 +58,7 @@
     <nav class="main"><a href="/en/services.html" class="">Services</a><a href="/en/about.html" class="">About us</a><a href="/en/pricing.html" class="active">Pricing</a><a href="/en/blog/index.html" class="">Blog</a><a href="/en/contact.html" class="">Contact</a></nav>
     <div class="hdr-right">
       <div class="lang-switch"><a href="/pricing.html" class="">RU</a><a href="/uz/pricing.html" class="">UZ</a><a href="#" class="active">EN</a></div>
-      <a class="phone" href="tel:+998879419138">+998 87 941 91 38</a><button class="burger" aria-label="Menu" aria-expanded="false" onclick="var h=this.closest('header');var o=h.classList.toggle('nav-open');this.setAttribute('aria-expanded',o);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <a class="phone" href="tel:+998879419138">Call us</a><button class="burger" aria-label="Menu" aria-expanded="false" onclick="var h=this.closest('header');var o=h.classList.toggle('nav-open');this.setAttribute('aria-expanded',o);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div>
 </header>
